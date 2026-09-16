@@ -111,7 +111,7 @@ function Contact() {
               marginBottom: "20px",
             }}
           >
-            Feel free to contact me for opportunities.
+            Let's build something great together — reach out anytime.
           </p>
 
           <Form
