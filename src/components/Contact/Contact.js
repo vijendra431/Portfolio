@@ -15,6 +15,7 @@ function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -25,18 +26,40 @@ function Contact() {
     }));
 
     setSubmitted(false);
+    setError(false);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    setSubmitted(true);
+    const form = event.target;
+    const data = new FormData(form);
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      setSubmitted(true);
+      setError(false);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setError(true);
+      setSubmitted(false);
+    }
   }
 
   return (
@@ -91,7 +114,35 @@ function Contact() {
             Feel free to contact me for opportunities.
           </p>
 
-          <Form onSubmit={handleSubmit}>
+          <Form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+          >
+            {/* Required by Netlify */}
+            <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot spam protection */}
+            <div
+              style={{
+                position: "absolute",
+                overflow: "hidden",
+                clip: "rect(0 0 0 0)",
+                height: "1px",
+                width: "1px",
+                margin: "-1px",
+                padding: 0,
+                border: 0,
+              }}
+            >
+              <label>
+                Don't fill this out if you're human:
+                <input name="bot-field" type="text" />
+              </label>
+            </div>
+
             <Form.Group style={{ marginBottom: "12px" }}>
               <Form.Label
                 style={{
@@ -201,7 +252,21 @@ function Contact() {
                   marginBottom: 0,
                 }}
               >
-                Thank you! Your message has been submitted.
+                Thank you! Your message has been sent successfully.
+              </p>
+            )}
+
+            {error && (
+              <p
+                style={{
+                  textAlign: "center",
+                  color: "#ff6b6b",
+                  fontSize: "12px",
+                  marginTop: "12px",
+                  marginBottom: 0,
+                }}
+              >
+                Something went wrong. Please try again.
               </p>
             )}
           </Form>
