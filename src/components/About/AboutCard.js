@@ -58,7 +58,7 @@ function AboutCard() {
             solutions.”
           </p>
 
-          <footer className="blockquote-footer">Vijay</footer>
+          <footer className="blockquote-footer">Vijendra</footer>
         </blockquote>
       </Card.Body>
     </Card>
