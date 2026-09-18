@@ -1,19 +1,8 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
- 
-</h2>
 
-<br/>
-
-<center>
-
-
-</center>
-
-<h3 align="center">
-    🔹
     
 ## Built With
+
+Portfolio LIVE - https://vijendrav-portfolio.netlify.app/
 
 My personal portfolio which features some of my github projects as well as my resume and technical skills.<br/>
 
