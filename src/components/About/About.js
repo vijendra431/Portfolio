@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
@@ -12,283 +12,365 @@ function About() {
     <>
       <Particle />
 
-      <Container fluid className="about-section">
-        <Container>
+      <Container
+        fluid
+        className="about-section w-full max-w-full overflow-x-hidden px-0"
+      >
+        <Container className="w-full max-w-[1200px] mx-auto px-3 sm:px-4 md:px-5">
 
           {/* ================= ABOUT INTRO ================= */}
-          <section style={{ paddingTop: "40px" }}>
-            <Row
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "10px",
-              }}
-            >
+          <section className="pt-8 sm:pt-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-6 md:gap-8">
+
               {/* LEFT CONTENT */}
-              <Col
-                md={7}
-                style={{
-                  paddingTop: "20px",
-                  paddingBottom: "40px",
-                }}
-              >
+              <div className="md:col-span-7 w-full min-w-0 pt-2 sm:pt-4 pb-4 sm:pb-8">
+
+                {/* Badge */}
                 <div
-                  style={{
-                    display: "inline-block",
-                    padding: "7px 16px",
-                    marginBottom: "15px",
-                    borderRadius: "30px",
-                    background: "rgba(168, 85, 247, 0.12)",
-                    border: "1px solid rgba(168, 85, 247, 0.35)",
-                    color: "#c084fc",
-                    fontSize: "14px",
-                    fontWeight: "600",
-                  }}
+                  className="
+                    inline-block
+                    px-4 py-2
+                    mb-4
+                    rounded-full
+                    bg-purple-500/10
+                    border border-purple-500/30
+                    text-purple-300
+                    text-xs sm:text-sm
+                    font-semibold
+                  "
                 >
                   ABOUT ME
                 </div>
 
+                {/* Heading */}
                 <h1
-                  style={{
-                    fontSize: "2.5em",
-                    fontWeight: "600",
-                    marginBottom: "20px",
-                  }}
+                  className="
+                    text-[1.8rem]
+                    sm:text-[2.2rem]
+                    md:text-[2.5rem]
+                    leading-tight
+                    font-semibold
+                    mb-5
+                    break-words
+                  "
                 >
                   Know Who <strong className="purple">I'M</strong>
                 </h1>
 
-                <Aboutcard />
-              </Col>
+                {/* About Content */}
+                <div className="w-full min-w-0 break-words">
+                  <Aboutcard />
+                </div>
+              </div>
 
               {/* RIGHT IMAGE */}
-              <Col
-                md={5}
-                style={{
-                  paddingTop: "30px",
-                  paddingBottom: "50px",
-                  textAlign: "center",
-                }}
-                className="about-img"
+              <div
+                className="
+                  md:col-span-5
+                  w-full
+                  min-w-0
+                  flex
+                  justify-center
+                  items-center
+                  pt-2
+                  sm:pt-5
+                  pb-8
+                  sm:pb-10
+                "
               >
                 <img
                   src={laptopImg}
                   alt="Vijendra working as a developer"
-                  className="img-fluid"
-                  style={{
-                    maxWidth: "420px",
-                    width: "100%",
-                    filter: "drop-shadow(0 15px 30px rgba(128, 0, 255, 0.18))",
-                  }}
+                  className="
+                    block
+                    w-[85%]
+                    sm:w-[75%]
+                    md:w-full
+                    max-w-[420px]
+                    h-auto
+                    object-contain
+                    mx-auto
+                    drop-shadow-[0_15px_30px_rgba(128,0,255,0.18)]
+                  "
                 />
-              </Col>
-            </Row>
+              </div>
+            </div>
           </section>
 
           {/* ================= PROFILE HIGHLIGHTS ================= */}
-          <Row
-            style={{
-              justifyContent: "center",
-              marginTop: "10px",
-              marginBottom: "60px",
-            }}
-          >
-            {/* CARD 1 */}
-            <Col xs={12} md={4} style={{ marginBottom: "20px" }}>
-              <div
-                style={{
-                  height: "100%",
-                  padding: "25px",
-                  textAlign: "center",
-                  borderRadius: "16px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(168,85,247,0.20)",
-                  transition: "all 0.3s ease",
-                }}
-              >
+          <section className="w-full min-w-0 mt-2 mb-12 sm:mb-16">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+
+              {/* CARD 1 */}
+              <div className="w-full min-w-0">
                 <div
-                  style={{
-                    fontSize: "32px",
-                    marginBottom: "10px",
-                  }}
+                  className="
+                    h-full
+                    w-full
+                    p-5 sm:p-6
+                    text-center
+                    rounded-2xl
+                    bg-white/[0.03]
+                    border border-purple-500/20
+                    transition-all
+                    duration-300
+                    hover:border-purple-500/40
+                    hover:bg-purple-500/[0.05]
+                  "
                 >
-                  💻
+                  <div className="text-3xl mb-3">
+                    💻
+                  </div>
+
+                  <h4 className="text-white text-lg font-semibold mb-2 break-words">
+                    Full Stack Developer
+                  </h4>
+
+                  <p className="text-gray-400 text-sm leading-6 mb-0 break-words">
+                    Building modern and responsive web applications.
+                  </p>
                 </div>
-
-                <h4 style={{ color: "#fff", marginBottom: "8px" }}>
-                  Full Stack Developer
-                </h4>
-
-                <p
-                  style={{
-                    color: "#aaa",
-                    marginBottom: 0,
-                    fontSize: "14px",
-                  }}
-                >
-                  Building modern and responsive web applications.
-                </p>
               </div>
-            </Col>
 
-            {/* CARD 2 */}
-            <Col xs={12} md={4} style={{ marginBottom: "20px" }}>
-              <div
-                style={{
-                  height: "100%",
-                  padding: "25px",
-                  textAlign: "center",
-                  borderRadius: "16px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(168,85,247,0.20)",
-                  transition: "all 0.3s ease",
-                }}
-              >
+              {/* CARD 2 */}
+              <div className="w-full min-w-0">
                 <div
-                  style={{
-                    fontSize: "32px",
-                    marginBottom: "10px",
-                  }}
+                  className="
+                    h-full
+                    w-full
+                    p-5 sm:p-6
+                    text-center
+                    rounded-2xl
+                    bg-white/[0.03]
+                    border border-purple-500/20
+                    transition-all
+                    duration-300
+                    hover:border-purple-500/40
+                    hover:bg-purple-500/[0.05]
+                  "
                 >
-                  ⚙️
+                  <div className="text-3xl mb-3">
+                    ⚙️
+                  </div>
+
+                  <h4 className="text-white text-lg font-semibold mb-2 break-words">
+                    Backend Development
+                  </h4>
+
+                  <p className="text-gray-400 text-sm leading-6 mb-0 break-words">
+                    Developing APIs, authentication and database-driven
+                    applications.
+                  </p>
                 </div>
-
-                <h4 style={{ color: "#fff", marginBottom: "8px" }}>
-                  Backend Development
-                </h4>
-
-                <p
-                  style={{
-                    color: "#aaa",
-                    marginBottom: 0,
-                    fontSize: "14px",
-                  }}
-                >
-                  Developing APIs, authentication and database-driven
-                  applications.
-                </p>
               </div>
-            </Col>
 
-            {/* CARD 3 */}
-            <Col xs={12} md={4} style={{ marginBottom: "20px" }}>
-              <div
-                style={{
-                  height: "100%",
-                  padding: "25px",
-                  textAlign: "center",
-                  borderRadius: "16px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(168,85,247,0.20)",
-                  transition: "all 0.3s ease",
-                }}
-              >
+              {/* CARD 3 */}
+              <div className="w-full min-w-0">
                 <div
-                  style={{
-                    fontSize: "32px",
-                    marginBottom: "10px",
-                  }}
+                  className="
+                    h-full
+                    w-full
+                    p-5 sm:p-6
+                    text-center
+                    rounded-2xl
+                    bg-white/[0.03]
+                    border border-purple-500/20
+                    transition-all
+                    duration-300
+                    hover:border-purple-500/40
+                    hover:bg-purple-500/[0.05]
+                  "
                 >
-                  🚀
+                  <div className="text-3xl mb-3">
+                    🚀
+                  </div>
+
+                  <h4 className="text-white text-lg font-semibold mb-2 break-words">
+                    Continuous Learning
+                  </h4>
+
+                  <p className="text-gray-400 text-sm leading-6 mb-0 break-words">
+                    Continuously improving coding, problem-solving and
+                    development skills.
+                  </p>
                 </div>
-
-                <h4 style={{ color: "#fff", marginBottom: "8px" }}>
-                  Continuous Learning
-                </h4>
-
-                <p
-                  style={{
-                    color: "#aaa",
-                    marginBottom: 0,
-                    fontSize: "14px",
-                  }}
-                >
-                  Continuously improving coding, problem-solving and
-                  development skills.
-                </p>
               </div>
-            </Col>
-          </Row>
+
+            </div>
+          </section>
 
           {/* ================= SKILLS ================= */}
-          <section style={{ marginBottom: "30px" }}>
-            <h1 className="project-heading">
+          <section className="w-full min-w-0 mb-8 sm:mb-10">
+
+            <h1
+              className="
+                text-center
+                text-[1.7rem]
+                sm:text-[2rem]
+                md:text-[2.3rem]
+                leading-tight
+                font-semibold
+                break-words
+              "
+            >
               Professional <strong className="purple">Skillset</strong>
             </h1>
 
             <p
-              style={{
-                textAlign: "center",
-                color: "#aaa",
-                marginBottom: "35px",
-                fontSize: "15px",
-              }}
+              className="
+                text-center
+                text-gray-400
+                text-sm sm:text-[15px]
+                leading-6
+                mt-3
+                mb-7 sm:mb-9
+                max-w-2xl
+                mx-auto
+                px-2
+              "
             >
               Technologies and frameworks I use to build modern web
               applications.
             </p>
 
-            <Techstack />
+            {/* Important for mobile overflow */}
+            <div className="w-full min-w-0 max-w-full overflow-hidden">
+              <Techstack />
+            </div>
+
           </section>
 
           {/* ================= TOOLS ================= */}
-          <section style={{ marginTop: "20px" }}>
-            <h1 className="project-heading">
+          <section className="w-full min-w-0 mt-8">
+
+            <h1
+              className="
+                text-center
+                text-[1.7rem]
+                sm:text-[2rem]
+                md:text-[2.3rem]
+                leading-tight
+                font-semibold
+                break-words
+              "
+            >
               <strong className="purple">Tools</strong> I Use
             </h1>
 
             <p
-              style={{
-                textAlign: "center",
-                color: "#aaa",
-                marginBottom: "35px",
-                fontSize: "15px",
-              }}
+              className="
+                text-center
+                text-gray-400
+                text-sm sm:text-[15px]
+                leading-6
+                mt-3
+                mb-7 sm:mb-9
+                max-w-2xl
+                mx-auto
+                px-2
+              "
             >
               Development tools and platforms I use throughout my workflow.
             </p>
 
-            <Toolstack />
+            <div className="w-full min-w-0 max-w-full overflow-hidden">
+              <Toolstack />
+            </div>
+
           </section>
 
           {/* ================= GITHUB ================= */}
-          <section style={{ marginTop: "20px" }}>
-            <h1 className="project-heading">
+          <section className="w-full min-w-0 mt-8">
+
+            <h1
+              className="
+                text-center
+                text-[1.7rem]
+                sm:text-[2rem]
+                md:text-[2.3rem]
+                leading-tight
+                font-semibold
+                break-words
+              "
+            >
               My <strong className="purple">GitHub</strong>
             </h1>
 
             <p
-              style={{
-                textAlign: "center",
-                color: "#aaa",
-                marginBottom: "30px",
-                fontSize: "15px",
-              }}
+              className="
+                text-center
+                text-gray-400
+                text-sm sm:text-[15px]
+                leading-6
+                mt-3
+                mb-7
+                max-w-2xl
+                mx-auto
+                px-2
+              "
             >
               Explore my projects, repositories and development activity.
             </p>
 
-            <Github />
+            <div
+              className="
+                w-full
+                min-w-0
+                max-w-full
+                overflow-x-auto
+                overflow-y-hidden
+              "
+            >
+              <Github />
+            </div>
+
           </section>
 
           {/* ================= CERTIFICATES ================= */}
-          <section style={{ marginTop: "30px", paddingBottom: "60px" }}>
-            <h1 className="project-heading">
+          <section
+            className="
+              w-full
+              min-w-0
+              mt-8
+              pb-12 sm:pb-16
+            "
+          >
+
+            <h1
+              className="
+                text-center
+                text-[1.7rem]
+                sm:text-[2rem]
+                md:text-[2.3rem]
+                leading-tight
+                font-semibold
+                break-words
+              "
+            >
               My <strong className="purple">Certificates</strong>
             </h1>
 
             <p
-              style={{
-                textAlign: "center",
-                color: "#aaa",
-                marginBottom: "35px",
-                fontSize: "15px",
-              }}
+              className="
+                text-center
+                text-gray-400
+                text-sm sm:text-[15px]
+                leading-6
+                mt-3
+                mb-7 sm:mb-9
+                max-w-2xl
+                mx-auto
+                px-2
+              "
             >
               Certifications and courses that support my technical learning.
             </p>
 
-            <Certificates />
+            <div className="w-full min-w-0 max-w-full overflow-hidden">
+              <Certificates />
+            </div>
+
           </section>
 
         </Container>
